@@ -1,0 +1,65 @@
+---
+title: "Ch3_Data_Transformation_with_dplyr"
+author: "Sam Csik"
+date: "4/9/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Load required packages
+```{r}
+library(nycflights13)
+library(tidyverse)
+```
+
+### Exercises pg. 49
+
+1. Find all flights that
+
+  a. Had an arrival delay of two or more hours
+  b. Flew to Houston (IAH or HOU)
+  c. Were operated by United, American, or Delta
+  d. Departed in summer (July, August, and September)
+  e. Arrived more than two hours late, but didn’t leave late
+  f. Were delayed by at least an hour, but made up over 30 minutes in flight
+  g. Departed between midnight and 6am (inclusive)
+```{r}
+
+```
+
+2. Another useful dplyr filtering helper is between(). What does it do? Can you use it to simplify the code needed to answer the previous challenges?
+```{r}
+
+```
+
+3. How many flights have a missing dep_time? What other variables are missing? What might these rows represent?
+```{r}
+
+```
+
+4. Why is NA ^ 0 not missing? Why is NA | TRUE not missing? Why is FALSE & NA not missing? Can you figure out the general rule? (NA * 0 is a tricky counterexample!)
+```{r}
+
+```
+
+### Exercises pg. 54
+
+1. Brainstorm as many ways as possible to select dep_time, dep_delay, arr_time, and arr_delay from flights.
+
+2. What happens if you include the name of a variable multiple times in a select() call?
+
+3. What does the one_of() function do? Why might it be helpful in conjunction with this vector?
+```{r}
+vars <- c("year", "month", "day", "dep_delay", "arr_delay")
+```
+
+4. Does the result of running the following code surprise you? How do the select helpers deal with case by default? How can you change that default?
+```{r}
+select(flights, contains("TIME"))
+```
+
+
+
