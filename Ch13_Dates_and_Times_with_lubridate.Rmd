@@ -1,0 +1,56 @@
+---
+title: "Ch13_Dates_and_Times_with_lubridate"
+author: "Sam Csik"
+date: "4/16/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Exercises pg. 243 (16.2.4)
+
+1. What happens if you parse a string that contains invalid dates?
+```{r}
+ymd(c("2010-10-10", "bananas"))
+```
+
+2. What does the tzone argument to today() do? Why is it important?
+
+3. Use the appropriate lubridate function to parse each of the following dates:
+```{r}
+d1 <- "January 1, 2010"
+d2 <- "2015-Mar-07"
+d3 <- "06-Jun-2017"
+d4 <- c("August 19 (2015)", "July 1 (2015)")
+d5 <- "12/30/14" # Dec 30, 2014
+```
+
+### Exercises pg. 248 (16.3.4)
+
+1. How does the distribution of flight times within a day change over the course of the year?
+
+2. Compare `dep_time`, `sched_dep_time` and `dep_delay`. Are they consistent? Explain your findings.
+
+3. Compare `air_time` with the duration between the departure and arrival. Explain your findings. (Hint: consider the location of the airport.)
+
+4. How does the average delay time change over the course of a day? Should you use `dep_time` or `sched_dep_time`? Why?
+
+5. On what day of the week should you leave if you want to minimise the chance of a delay?
+
+6. What makes the distribution of diamonds$carat and flights$sched_dep_time similar?
+
+7. Confirm my hypothesis that the early departures of flights in minutes 20-30 and 50-60 are caused by scheduled flights that leave early. Hint: create a binary variable that tells you whether or not a flight was delayed.
+
+### Exercises pg. 253 (16.4.5)
+
+1. Why is there `months()` but no `dmonths()`?
+
+2. Explain `days(overnight * 1)` to someone who has just started learning R. How does it work?
+
+3. Create a vector of dates giving the first day of every month in 2015. Create a vector of dates giving the first day of every month in the current year.
+
+4. Write a function that given your birthday (as a date), returns how old you are in years.
+
+5. Why can’t `(today() %--% (today() + years(1)) / months(1)` work?

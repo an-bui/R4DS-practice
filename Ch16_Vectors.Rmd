@@ -1,0 +1,49 @@
+---
+title: "Ch16_Vectors"
+author: "Sam Csik"
+date: "4/16/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Exercises pg. 296 (20.3.5)
+
+1. Describe the difference between `is.finite(x)` and `!is.infinite(x)`.
+
+2. Read the source code for `dplyr::near()` (Hint: to see the source code, drop the ()). How does it work?
+
+3. A logical vector can take 3 possible values. How many possible values can an integer vector take? How many possible values can a double take? Use google to do some research.
+
+4. Brainstorm at least four functions that allow you to convert a double to an integer. How do they differ? Be precise.
+
+5. What functions from the readr package allow you to turn a string into logical, integer, and double vector?
+
+### Exercises pg. 302 (20.4.6)
+
+1. What does `mean(is.na(x))` tell you about a vector x? What about `sum(!is.finite(x))`?
+
+2. Carefully read the documentation of `is.vector()`. What does it actually test for? Why does `is.atomic()` not agree with the definition of atomic vectors above?
+
+3. Compare and contrast `setNames()` with `purrr::set_names()`.
+
+4.Create functions that take a vector as input and returns:
+  
+  a. The last value. Should you use [ or [[?
+  b. The elements at even numbered positions.
+  c. Every element except the last value.
+  d. Only even numbers (and no missing values).
+
+5. Why is `x[-which(x > 0)]` not the same as `x[x <= 0]`?
+
+6. What happens when you subset with a positive integer that’s bigger than the length of the vector? What happens when you subset with a name that doesn’t exist?
+
+### Exercises pg. 313 (20.7.4)
+
+1. What does`hms::hms(3600)` return? How does it print? What primitive type is the augmented vector built on top of? What attributes does it use?
+
+2. Try and make a tibble that has columns with different lengths. What happens?
+
+3. Based on the definition above, is it ok to have a list as a column of a tibble?
