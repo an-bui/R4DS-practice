@@ -1,0 +1,155 @@
+---
+title: "Ch11_Strings_with_stringr"
+author: "Sam Csik"
+date: "4/15/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercises pg. 199 (14.2.5)
+
+1. In code that doesn’t use **stringr**, you’ll often see `paste()` and `paste0()`. What’s the difference between the two functions? What **stringr** function are they equivalent to? How do the functions differ in their handling of NA?
+
+2. In your own words, describe the difference between the `sep` and `collapse` arguments to `str_c()`.
+
+3. Use `str_length()` and `str_sub()` to extract the middle character from a string. What will you do if the string has an even number of characters?
+
+4. What does `str_wrap()` do? When might you want to use it?
+
+5. What does `str_trim()` do? What’s the opposite of `str_trim()`?
+
+6. Write a function that turns (e.g.) a vector `c("a", "b", "c")` into the string a, b, and c. Think carefully about what it should do if given a vector of length 0, 1, or 2.
+
+### Exercises pg. 201 (14.3.1.1)
+
+1. Explain why each of these strings don’t match a \: "\", "\\", "\\\".
+
+2. How would you match the sequence "'\?
+
+3. What patterns will the regular expression \..\..\.. match? How would you represent it as a string?
+
+### Exercises pg. 203 (14.3.2.1)
+
+1. How would you match the literal string "$^$"?
+
+2. Given the corpus of common words in stringr::words, create regular expressions that find all words that:
+
+  a. Start with “y”.
+  b. End with “x”
+  c. Are exactly three letters long. (Don’t cheat by using str_length()!)
+  d. Have seven letters or more.
+  e. Since this list is long, you might want to use the match argument to str_view() to show only the matching or non-matching      words.
+  
+### Exercises pg. 204 (14.3.3.1)
+
+1. Create regular expressions to find all words that:
+
+  a. Start with a vowel.
+  b. That only contain consonants. (Hint: thinking about matching “not”-vowels.)
+  c. End with ed, but not with eed.
+  d. End with ing or ise.
+
+2. Empirically verify the rule “i before e except after c”.
+
+3. Is “q” always followed by a “u”?
+
+4. Write a regular expression that matches a word if it’s probably written in British English, not American English.
+
+5. Create a regular expression that will match telephone numbers as commonly written in your country.
+
+### Exercises pg. 206 (14.3.4.1)
+
+1. Describe the equivalents of ?, +, * in {m,n} form.
+
+2. Describe in words what these regular expressions match: (read carefully to see if I’m using a regular expression or a string that defines a regular expression.)
+
+  a. ^.*$
+  b. "\\{.+\\}"
+  c. \d{4}-\d{2}-\d{2}
+  d. "\\\\{4}"
+
+3. Create regular expressions to find all words that:
+
+  a. Start with three consonants.
+  b. Have three or more vowels in a row.
+  c. Have two or more vowel-consonant pairs in a row.
+
+3. Solve the beginner regexp crosswords at https://regexcrossword.com/challenges/beginner.
+
+### Exercises pg. 207 (14.3.5.1)
+
+1. Describe, in words, what these expressions will match:
+
+  a. (.)\1\1
+  b. "(.)(.)\\2\\1"
+  c. (..)\1
+  d. "(.).\\1.\\1"
+  e. "(.)(.)(.).*\\3\\2\\1"
+
+2. Construct regular expressions to match words that:
+
+  a. Start and end with the same character.
+  b. Contain a repeated pair of letters (e.g. “church” contains “ch” repeated twice.)
+  c. Contain one letter repeated in at least three places (e.g. “eleven” contains three “e”s.)
+
+### Exercises pg. 211 (14.4.1.1)
+
+1. For each of the following challenges, try solving it by using both a single regular expression, and a combination of multiple str_detect() calls.
+
+  a. Find all words that start or end with x.
+  b. Find all words that start with a vowel and end with a consonant.
+  c. Are there any words that contain at least one of each different vowel?
+  d. What word has the highest number of vowels? What word has the highest proportion of vowels? (Hint: what is the denominator?)
+
+### Exercises pg. 213 (14.4.2.1)
+
+1. In the previous example, you might have noticed that the regular expression matched “flickered”, which is not a colour. Modify the regex to fix the problem.
+
+2. From the Harvard sentences data, extract:
+
+  a. The first word from each sentence.
+  b. All words ending in ing.
+  c. All plurals.
+  
+### Exercises pg. 215 (14.4.3.1)
+
+1. Find all words that come after a “number” like “one”, “two”, “three” etc. Pull out both the number and the word.
+
+1. Find all contractions. Separate out the pieces before and after the apostrophe.
+
+### Exercises pg. 216 (14.4.4.1)
+
+1. Replace all forward slashes in a string with backslashes.
+
+2. Implement a simple version of str_to_lower() using replace_all().
+
+3. Switch the first and last letters in words. Which of those strings are still words?
+
+### Exercises pg. 217 (14.4.5.1)
+
+1. Split up a string like "apples, pears, and bananas" into individual components.
+
+2. Why is it better to split up by boundary("word") than " "?
+
+3. What does splitting with an empty string ("") do? Experiment, and then read the documentation.
+
+### Exercises pg. 221 (14.5.1)
+
+1. How would you find all strings containing \ with `regex()` vs. with `fixed()`?
+
+2. What are the five most common words in sentences?
+
+### Exercises pg. 222 (14.7.1)
+
+1. Find the stringi functions that:
+
+2. Count the number of words.
+
+  a. Find duplicated strings.
+  b. Generate random text.
+
+3. How do you control the language that stri_sort() uses for sorting?
+
